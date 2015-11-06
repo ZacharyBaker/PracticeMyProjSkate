@@ -9,9 +9,10 @@ angular.module('skateApp', ['ui.router'])
 			controller: 'loginCtrl'
 		})
 		
-		.state('main', {
-			url: '/main',
-			templateUrl: 'template/mainTmpl.html'
+		.state('state', {
+			url: '/state/:state',
+			templateUrl: 'templates/stateTmpl.html',
+			controller: 'mainCtrl'
 		})
 		
 		

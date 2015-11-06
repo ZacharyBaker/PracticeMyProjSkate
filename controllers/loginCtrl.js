@@ -1,5 +1,13 @@
 angular.module('skateApp')
 
 .controller('loginCtrl', ['$scope', function($scope){
-	$scope.test = "check me out";
+
+
+
+	$scope.dude = function(){
+		console.log('heckka pushed');
+	};
+	
+	
+	
 }])
