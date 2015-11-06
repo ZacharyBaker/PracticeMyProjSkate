@@ -1,12 +1,14 @@
 .loginBackground {
-	background: url(a.jpg) no-repeat center center fixed; 
+	background: url(images/a.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 1500px;
+  height: 1000px;
+  
 }
 
 .hi {
 	font-size: 50px;
+  margin-top: 0px;
 }

@@ -9,6 +9,13 @@ angular.module('skateApp', ['ui.router'])
 			controller: 'loginCtrl'
 		})
 		
+		.state('main', {
+			url: '/main',
+			templateUrl: 'template/mainTmpl.html'
+		})
+		
+		
+		
 		
 	$urlRouterProvider
 		.otherwise('/login');
