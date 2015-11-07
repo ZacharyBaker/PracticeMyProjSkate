@@ -2,7 +2,7 @@ angular.module('skateApp')
 
 	.service('mainService', function () {
 
-		this.skateparks = [
+		var skateparks = [
 			{
 				name: 'The Cove',
 				state: 'california',
@@ -11,40 +11,65 @@ angular.module('skateApp')
 			},
 			{
 				name: 'Alga Norte',
-				state: 'california',				
+				state: 'california',
 				address: '6565 Alicante Rd, Carlsbad, CA 92009',
 				pic: 'images/AlgaNorteCarlsbad.jpg'
 			},
 			{
 				name: 'Craig Ranch',
-				state: 'nevada',				
+				state: 'nevada',
 				address: '628 W Craig Rd, North Las Vegas, NV 89032',
 				pic: 'images/CraigRanchSkatePark.jpg'
 			},
 			{
 				name: 'Anthem Skate Park',
-				state: 'nevada',				
+				state: 'nevada',
 				address: '2300 Reunion Dr, Henderson, NV 89052',
 				pic: 'images/AnthemSkatePark.jpg'
 			},
 			{
 				name: 'Herriman Skate Park',
-				state: 'utah',				
+				state: 'utah',
 				address: '5900 West 13400 South, Herriman, UT 84096',
 				pic: 'images/HerrimanSkatePark.jpg'
 			},
 			{
 				name: 'Richard L. Guthrie Skate Park',
-				state: 'utah',				
+				state: 'utah',
 				address: '2414 East Bengal Blvd, Cottonwood Heights, UT 84121',
 				pic: 'images/GuthSkatePark.jpg'
 			}
 
 		];
 
+		this.getData = function () {
+			return skateparks;
+		}
+//------------gets a list of states----------------
+		this.getStates = function () {
+			var stateArr = [];
+			for (var i = 0; i < skateparks.length; i++) {
+				if(stateArr.indexOf(skateparks[i].state) === -1){
+				stateArr.push(skateparks[i].state);
+				// console.log('stateArr', stateArr)
+				}
+			}
+			return stateArr;
+		}
+//--------- gets parks specific to state--------------
+		this.stateParks = [];
+		this.getParks = function(stat){
+			for (var i = 0; i < skateparks.length; i++) {
+				if (skateparks[i].state === stat) {
+					this.stateParks.push(skateparks[i]);
+				}
+			}
 
 
+			console.log('this is state parks', this.stateParks)
+			return this.stateParks;
 
+		}
 
 
 

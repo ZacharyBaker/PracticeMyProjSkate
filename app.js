@@ -6,7 +6,7 @@ angular.module('skateApp', ['ui.router'])
 		.state('login', {
 			url: '/login',
 			templateUrl: 'templates/loginTmpl.html',
-			controller: 'mainCtrl'
+			controller: 'loginCtrl'
 		})
 		
 		.state('state', {

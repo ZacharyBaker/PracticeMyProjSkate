@@ -1,19 +1,25 @@
 angular.module('skateApp')
 
-	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', function ($scope, mainService, $stateParams) {
+	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', '$state', function ($scope, mainService, $stateParams, $state) {
 
-		$scope.skateparks = mainService.skateparks;
+		$scope.states = mainService.getStates();
+		// console.log(mainService.getStates())
+		$scope.skateparks = mainService.getData();
 
 
 
-		$scope.changeState = function (mystate) {
-			//this needs to change the state!
-			//u$state.go('')
-			console.log(mystate);
+		$scope.state = $stateParams.state;
+
+		//changing the state
+		$scope.changeState = function (stat){
+			$state.go('state', {
+				state: stat
+			});
+			// console.log(stat);
 		}
 	
 	
-	
+		
 		
 
 	}])
