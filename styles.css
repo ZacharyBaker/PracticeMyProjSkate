@@ -16,7 +16,7 @@ body, html {
 }
 
 
-.mainBackground {
+.stateBackground {
 	background: url(images/c.jpg) no-repeat center center fixed; 
   /*-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -25,5 +25,7 @@ body, html {
   height: 1000px;
   
   
-  /*background-color: white;*/
+  color: lime;
+  
+
 }

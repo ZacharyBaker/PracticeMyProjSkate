@@ -57,8 +57,9 @@ angular.module('skateApp')
 			return stateArr;
 		}
 //--------- gets parks specific to state--------------
-		this.stateParks = [];
+
 		this.getParks = function(stat){
+		this.stateParks = [];			
 			for (var i = 0; i < skateparks.length; i++) {
 				if (skateparks[i].state === stat) {
 					this.stateParks.push(skateparks[i]);
