@@ -5,6 +5,6 @@ angular.module('skateApp')
 	$scope.park = $stateParams.park;
 	
 	
-	
+	// play with the service now!!! with the $scope.park
 	
 }]);
