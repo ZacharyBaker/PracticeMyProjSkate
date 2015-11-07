@@ -14,7 +14,11 @@ angular.module('skateApp', ['ui.router'])
 			templateUrl: 'templates/stateTmpl.html',
 			controller: 'mainCtrl'
 		})
-		
+		.state('park', {
+			url: '/state/:state/:park',
+			templateUrl: 'templates/parksTmpl.html',
+			controller: 'parkCtrl'
+		})
 		
 		
 		

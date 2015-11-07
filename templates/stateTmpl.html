@@ -1,9 +1,15 @@
 <div class="stateBackground">
 
-<div><h1>stateParks:</h1> {{stateParks}}
+<!--<div><h1>stateParks:</h1> {{stateParks}}
+</div>-->
+
+
+
+
+<div ng-repeat="park in stateParks">
+pic: {{park.pic}}<br>
+name: <a href="#/state/{{park.state}}/{{park.name}}">{{park.name}}</a><br>
+state: {{park.state}}<br>
+address: {{park.address}}<br>
 </div>
-
-
-<div ng-repeat="park in stateParks"></div>
-
 </div>

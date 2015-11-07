@@ -67,11 +67,13 @@ angular.module('skateApp')
 			}
 
 
-			console.log('this is state parks', this.stateParks)
+
 			return this.stateParks;
 
 		}
-
+		
+//-------------- get park data for solo page ----------
+		
 
 
 	});
