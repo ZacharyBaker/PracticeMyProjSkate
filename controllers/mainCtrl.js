@@ -6,7 +6,7 @@ angular.module('skateApp')
 		$scope.state = $stateParams.state;
 
 		$scope.stateParks = mainService.getParks($scope.state);
-		console.log('this is what im trying to loop through', $scope.stateParks)
+
 
 		
 

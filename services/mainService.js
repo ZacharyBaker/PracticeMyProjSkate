@@ -74,6 +74,12 @@ angular.module('skateApp')
 		
 //-------------- get park data for solo page ----------
 		
-
-
+		this.getSinglePark = function(park){
+			for (var i = 0; i < skateparks.length; i++){
+				if (skateparks[i].name === park){
+					return skateparks[i];
+				}
+			}
+		}
+//---------------------------------------------------
 	});
