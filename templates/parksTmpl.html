@@ -1,6 +1,13 @@
-miles wishes he was shredding at {{singlePark.name}}
-
-{{singlePark.location}}
+miles wishes he was shredding at {{singlePark.name}} {{singlePark.address}}
 
 
 <div><img ng-src="{{singlePark.pic}}"></div>
+
+<button ng-click="sendMessageToService()"></button>
+	<input type="text" placeholder="comment..." ng-model="message">
+	<input type="text" placeholder="Username..." ng-model="user">
+
+
+<p ng-repeat="message in messages">{{message.text}}
+	<br> {{message.user}}
+</p>

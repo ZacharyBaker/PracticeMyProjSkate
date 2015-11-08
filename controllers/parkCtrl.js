@@ -6,6 +6,11 @@ angular.module('skateApp')
 	
 	$scope.singlePark = mainService.getSinglePark($scope.park);
 	
+	$scope.messages = mainService.getMessages();
+	
+	$scope.sendMessageToService = function(){
+		mainService.addMessage($scope.message, $scope.singlePark.name, $scope.user)
+	}
 
 	
 }]);

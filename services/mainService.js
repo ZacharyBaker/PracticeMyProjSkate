@@ -41,10 +41,28 @@ angular.module('skateApp')
 			}
 
 		];
+		
+
 
 		this.getData = function () {
 			return skateparks;
 		}
+		
+		
+		var messages = [];
+
+		this.getMessages = function() {
+			return messages;
+		}	
+		
+//-----------add message to array of messages------
+		
+		this.addMessage = function(msg, name, user){
+			messages.push({text: msg, parkName: name, user: user})
+			console.log('this is the messages array', messages);
+		}
+
+	
 //------------gets a list of states----------------
 		this.getStates = function () {
 			var stateArr = [];
