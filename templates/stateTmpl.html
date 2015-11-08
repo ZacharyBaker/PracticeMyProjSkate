@@ -6,7 +6,7 @@
 
 
 <div ng-repeat="park in stateParks">
-pic: {{park.pic}}<br>
+<img ng-src="{{park.pic}}"><br>
 name: <a href="#/state/{{park.state}}/{{park.name}}">{{park.name}}</a><br>
 state: {{park.state}}<br>
 address: {{park.address}}<br>
