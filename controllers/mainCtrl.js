@@ -9,7 +9,11 @@ angular.module('skateApp')
 
 		$scope.addNewPark = function(){
 			mainService.addNewPark($scope.newParkName, $scope.newParkAddress, $scope.newParkState, $scope.newParkImgUrl);
-			$scope.stateParks = mainService.getParks($scope.state)
+			$scope.stateParks = mainService.getParks($scope.state);
+			$scope.newParkName = '';
+			$scope.newParkAddress = '';
+			$scope.newParkState = '';
+			$scope.newParkImgUrl = '';
 		}
 		
 
