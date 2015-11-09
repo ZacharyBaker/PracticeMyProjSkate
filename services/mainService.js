@@ -55,13 +55,15 @@ angular.module('skateApp')
 		//------------ Add a new Park to the skateparks array -----------------
 
 		this.addNewPark = function (namE, addy, stat, imgUrl) {
+			var lowercaseState = stat.toLowerCase();
+			
 			for (var i = 0; i < skateparks.length; i++) {
 				if (skateparks[i].name === namE) {
 					return;
 				}
 			}
 			skateparks.push({
-				name: namE, state: stat, address: addy, pic: imgUrl
+				name: namE, state: lowercaseState, address: addy, pic: imgUrl
 			});
 		}
 
