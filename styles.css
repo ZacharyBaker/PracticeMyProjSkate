@@ -42,8 +42,8 @@ body, html {
   color: black;
   /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
   font-family: jaf-bernino-sans-condensed, helvetica, arial, sans-serif;
-      text-transform: uppercase;
-  font-weight: bold;
+      /*text-transform: uppercase;*/
+  /*font-weight: bold;*/
 }
 
 .stateBoxA {
