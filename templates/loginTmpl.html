@@ -3,16 +3,18 @@
 
 
 
-<!-- try ng submit with form-->
-<select name="state" ng-model="state">
-	<option value="">State</option>
-	<option ng-value="state" ng-repeat="stat in states">{{stat}}</option>
-	
-	
-</select>
-<button ng-disabled="value === state" ng-click="changeState(state)">HeckkaPushThisButton</button>
+	<!-- try ng submit with form-->
+	<form ng-submit="changeState(state)">
+		<select name="state" ng-model="state">
+			<option value="">State</option>
+			<option ng-value="state" ng-repeat="stat in states">{{stat}}</option>
 
-			
+
+
+		</select>
+		<button ng-disabled="value === state" ng-click="changeState(state)">HeckkaPushThisButton</button>
+	</form>
+
 
 
 
@@ -20,4 +22,3 @@
 
 
 </div>
-
