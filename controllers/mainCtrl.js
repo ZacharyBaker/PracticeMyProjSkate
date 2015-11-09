@@ -8,7 +8,8 @@ angular.module('skateApp')
 		$scope.stateParks = mainService.getParks($scope.state);
 
 		$scope.addNewPark = function(){
-			mainService.addNewPark($scope.newParkName, $scope.newParkAddress, $scope.newParkState, $scope.newParkImgUrl)
+			mainService.addNewPark($scope.newParkName, $scope.newParkAddress, $scope.newParkState, $scope.newParkImgUrl);
+			mainService($scope.state)
 		}
 		
 
