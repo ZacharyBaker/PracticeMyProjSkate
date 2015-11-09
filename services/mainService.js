@@ -41,35 +41,39 @@ angular.module('skateApp')
 			}
 
 		];
-		
+
 
 
 		this.getData = function () {
 			return skateparks;
 		}
-		
-		
+
+
 		var messages = [];
 		var parkMessages = [];
 		
-//------------ Add a new Park to the skateparks array -----------------
+		//------------ Add a new Park to the skateparks array -----------------
 
-		this.addNewPark = function(namE, addy, stat, imgUrl){
-			for (var i = 0; i < skateparks.length; i++){
-				
+		this.addNewPark = function (namE, addy, stat, imgUrl) {
+			for (var i = 0; i < skateparks.length; i++) {
+				if (skateparks[i].name === namE) {
+					return;
+				}
 			}
 			skateparks.push({
 				name: namE, state: stat, address: addy, pic: imgUrl
-			})
+			});
 		}
 
 		
-//-------- get the messages for certain park ------------
 
-		this.getMessages = function(parkNam) {
+		
+		//-------- get the messages for certain park ------------
+
+		this.getMessages = function (parkNam) {
 			parkMessages = [];
-			for (var i = 0; i < messages.length; i++){
-				if (messages[i].parkName === parkNam){
+			for (var i = 0; i < messages.length; i++) {
+				if (messages[i].parkName === parkNam) {
 					parkMessages.push(messages[i]);
 				}
 			}
@@ -77,29 +81,29 @@ angular.module('skateApp')
 			return parkMessages;
 		}	
 		
-//-----------add message to array of messages------
+		//-----------add message to array of messages------
 		
-		this.addMessage = function(msg, name, user){
-			messages.push({text: msg, parkName: name, user: user})
+		this.addMessage = function (msg, name, user) {
+			messages.push({ text: msg, parkName: name, user: user })
 			console.log('this is the messages array', messages);
 		}
 
 	
-//------------gets a list of states----------------
+		//------------gets a list of states----------------
 		this.getStates = function () {
 			var stateArr = [];
 			for (var i = 0; i < skateparks.length; i++) {
-				if(stateArr.indexOf(skateparks[i].state) === -1){
-				stateArr.push(skateparks[i].state);
-				// console.log('stateArr', stateArr)
+				if (stateArr.indexOf(skateparks[i].state) === -1) {
+					stateArr.push(skateparks[i].state);
+					// console.log('stateArr', stateArr)
 				}
 			}
 			return stateArr;
 		}
-//--------- gets parks specific to state--------------
+		//--------- gets parks specific to state--------------
 
-		this.getParks = function(stat){
-		this.stateParks = [];			
+		this.getParks = function (stat) {
+			this.stateParks = [];
 			for (var i = 0; i < skateparks.length; i++) {
 				if (skateparks[i].state === stat) {
 					this.stateParks.push(skateparks[i]);
@@ -112,14 +116,14 @@ angular.module('skateApp')
 
 		}
 		
-//-------------- get park data for solo page ----------
+		//-------------- get park data for solo page ----------
 		
-		this.getSinglePark = function(park){
-			for (var i = 0; i < skateparks.length; i++){
-				if (skateparks[i].name === park){
+		this.getSinglePark = function (park) {
+			for (var i = 0; i < skateparks.length; i++) {
+				if (skateparks[i].name === park) {
 					return skateparks[i];
 				}
 			}
 		}
-//---------------------------------------------------
+		//---------------------------------------------------
 	});
