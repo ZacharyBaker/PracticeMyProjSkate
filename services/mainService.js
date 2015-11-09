@@ -50,9 +50,19 @@ angular.module('skateApp')
 		
 		
 		var messages = [];
+		var parkMessages = [];
+		
+//-------- get the messages for certain park ------------
 
-		this.getMessages = function() {
-			return messages;
+		this.getMessages = function(parkNam) {
+			parkMessages = [];
+			for (var i = 0; i < messages.length; i++){
+				if (messages[i].parkName === parkNam){
+					parkMessages.push(messages[i]);
+				}
+			}
+			console.log('thisis the park parkMessages', parkMessages);
+			return parkMessages;
 		}	
 		
 //-----------add message to array of messages------
