@@ -1,6 +1,7 @@
 <div class="parksContainer">
 	<div class="parkHeader">
-		<h1>{{singlePark.name}}</h1><br>{{singlePark.address}}
+		<h1>{{singlePark.name}}</h1>
+		<br>{{singlePark.address}}
 
 	</div>
 
@@ -8,15 +9,17 @@
 		<div><img ng-src="{{singlePark.pic}}"></div>
 
 		<div class="inputBoxes">
-			<input type="text" placeholder="comment..." ng-model="message">
-			<input type="text" placeholder="Username..." ng-model="user">
+			<form ng-submit="sendMessageToService()">
+				<input type="text" placeholder="comment..." ng-model="message">
+				<input type="text" placeholder="Username..." ng-model="user">
+			</form>
 		</div>
 		<button ng-click="sendMessageToService()">SubmitBrehh</button>
 
 
 		<p ng-repeat="parkMessage in parkMessages">{{parkMessage.text}}
 			<br> {{parkMessage.user}}
-			<br>{{singlePark.name}}
+
 		</p>
 
 	</div>

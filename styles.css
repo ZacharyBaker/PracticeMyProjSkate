@@ -75,6 +75,7 @@ body, html {
 .parkBox img {
   padding-top: 20px;
   padding-bottom: 10px;
+  width: 90%;
 }
 
 .inputBoxes {
@@ -89,3 +90,7 @@ body, html {
   box-shadow: inset 1px 1px 2px 0 #c9c9c9;
 
 }
+
+
+/* this is all nav bar ishhhh */ 
+
