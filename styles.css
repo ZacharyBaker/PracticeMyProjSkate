@@ -22,12 +22,32 @@ body, html {
   -moz-background-size: cover;
   -o-background-size: cover;*/
   background-size: cover;
-  height: 1000px;
-  
-  
-  color: lime;
+  height: 2000px; 
   text-align: center;
 
 }
 
+.stateTmpl {
+  background: white;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 20px;
+  padding: 10px 0 10px 0;
+}
 
+.stateBox img {
+  width: 90%;
+}
+
+.stateBox a {
+  text-decoration: none;
+  font-size: 40px;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.stateBoxA {
+  margin-bottom: 15px;
+}

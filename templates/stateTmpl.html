@@ -1,16 +1,20 @@
 <div class="stateBackground">
 
 
-<div class="stateTmpl" ng-repeat="park in stateParks">
+	<div class="stateTmpl" ng-repeat="park in stateParks">
 
 
-<div class="stateBox">
-<a href="#/state/{{park.state}}/{{park.name}}">{{park.name}}</a><br>
-<img ng-src="{{park.pic}}"><br>
-state: {{park.state}}<br>
-address: {{park.address}}<br>
+		<div class="stateBox">
+			<div class="stateBoxA">
+				<a href="#/state/{{park.state}}/{{park.name}}">{{park.name}}</a>
+				<br>
+			</div>
+			<img ng-src="{{park.pic}}">
+			<br>
+			<div>state: {{park.state}}
+				<br> address: {{park.address}}</div>
+		</div>
+
 </div>
 
-
-
-</div>
+	
