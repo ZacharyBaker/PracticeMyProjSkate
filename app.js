@@ -1,5 +1,9 @@
 angular.module('skateApp', ['ui.router'])
 
+.constant('fb', {
+	url: 'https://skateapp.firebaseio.com/'
+})
+
 .config(function($urlRouterProvider, $stateProvider){
 	
 	$stateProvider
