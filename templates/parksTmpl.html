@@ -12,9 +12,11 @@
 			<form ng-submit="sendMessageToService()">
 				<input type="text" placeholder="comment..." ng-model="message">
 				<input type="text" placeholder="Username..." ng-model="user">
+				<button ng-click="sendMessageToService()">SubmitBrehh</button>
+
 			</form>
 		</div>
-		<button ng-click="sendMessageToService()">SubmitBrehh</button>
+
 
 
 		<p ng-repeat="parkMessage in parkMessages">{{parkMessage.text}}
