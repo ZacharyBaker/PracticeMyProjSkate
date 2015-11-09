@@ -52,6 +52,15 @@ angular.module('skateApp')
 		var messages = [];
 		var parkMessages = [];
 		
+//------------ Add a new Park to the skateparks array -----------------
+
+		this.addNewPark = function(namE, addy, stat, imgUrl){
+			skateparks.push({
+				name: namE, state: stat, address: addy, pic: imgUrl
+			})
+		}
+
+		
 //-------- get the messages for certain park ------------
 
 		this.getMessages = function(parkNam) {
