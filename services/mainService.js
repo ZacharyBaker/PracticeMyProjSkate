@@ -1,6 +1,15 @@
 angular.module('skateApp')
 
-	.service('mainService', function () {
+	.service('mainService', function ($firebaseArray) {
+
+		this.addPark = function (park) {
+			var fbRoot = 'https://skateapp.firebaseio.com';
+			var parksRef = new Firebase(fbRoot + '/parks');
+			var parks = $firebaseArray(parksRef);
+			parks.$add(park);
+		}
+
+
 
 		var skateparks = [
 			{
