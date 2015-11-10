@@ -38,7 +38,19 @@ angular.module('skateApp', ['ui.router', 'firebase'])
 			.state('park', {
 				url: '/state/:state/:park',
 				templateUrl: 'templates/parksTmpl.html',
-				controller: 'parkCtrl'
+				controller: 'parkCtrl',
+				resolve: {
+					singlePark: function($firebaseArray){
+						var fbRoot = 'https://skateapp.firebaseio.com';
+						var singleParkRef = new Firebase(fbRoot + '/messages');
+						var singleP = $firebaseArray(singleParkRef);
+						return singleP.$loaded()
+						.then(function(data){
+							console.log('this is data for messages', data);
+							return data;
+						})
+					}
+				}
 			})
 
 

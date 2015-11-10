@@ -25,15 +25,6 @@ angular.module('skateApp')
 
 			}
 
-			// $scope.stateParks = function () {
-			// 	var fbRoot = 'https://skateapp.firebaseio.com';
-			// 	var parksRef = new Firebase(fbRoot + '/parks');
-			// 	var parks = $firebaseArray(parksRef);
-			// 	return parks.$loaded()
-			// 		.then(function (data) {
-			// 			console.log(data[0].name);
-			// 			return data;
-			// 		})
-			// };
+		
 		}]);
 	
