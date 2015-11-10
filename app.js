@@ -18,14 +18,19 @@ angular.module('skateApp', ['ui.router', 'firebase'])
 				templateUrl: 'templates/stateTmpl.html',
 				controller: 'mainCtrl',
 				resolve: {
-					stateParks: function ($firebaseArray) {
+					stateParks: function ($firebaseArray, $stateParams) {
 						var fbRoot = 'https://skateapp.firebaseio.com';
 						var parksRef = new Firebase(fbRoot + '/parks');
 						var parks = $firebaseArray(parksRef);
 						return parks.$loaded()
 							.then(function (data) {
-								console.log(data[0].name);
-								return data;
+								var justStateParks = [];
+								for (var i = 0; i < data.length; i++){
+									if (data[i].state === $stateParams.state){
+										justStateParks.push(data[i]);
+									}
+								}
+								return justStateParks;
 							})
 					}
 				}
