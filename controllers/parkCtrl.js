@@ -4,8 +4,8 @@ angular.module('skateApp')
 
 		$scope.park = $stateParams.park;
 
-		$scope.singlePark = mainService.getSinglePark($scope.park);
-
+		// $scope.singlePark = mainService.getSinglePark($scope.park);
+		$scope.singlePark = singlePark;
 		$scope.getParkMessages = function () {
 			$scope.parkMessages = mainService.getMessages($scope.singlePark.name);
 			return $scope.parkMessages;

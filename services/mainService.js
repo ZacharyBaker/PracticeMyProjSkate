@@ -15,6 +15,21 @@ angular.module('skateApp')
 			var singleP = $firebaseArray(singleParkRef);
 			singleP.$add(message);
 		}
+		
+		//-------------- get park data for solo page ----------
+		
+		// this.getSinglePark = function (park) {
+		// 	// for (var i = 0; i < skateparks.length; i++) {
+		// 	// 	if (skateparks[i].name === park) {
+		// 	// 		return skateparks[i];
+		// 	// 	}
+		// 	// }
+		// 	var fbRoot = 'https://skateapp.firebaseio.com';
+		// 	var singlepark = new Firebase(fbRoot + '/parks' + park);
+		// 	console.log('getSinglePark func', singlepark);
+		// 	return singlepark;
+		// }
+		//---------------------------------------------------
 
 		// var skateparks = [
 		// 	{
@@ -132,14 +147,5 @@ angular.module('skateApp')
 
 		}
 		
-		//-------------- get park data for solo page ----------
 		
-		this.getSinglePark = function (park) {
-			for (var i = 0; i < skateparks.length; i++) {
-				if (skateparks[i].name === park) {
-					return skateparks[i];
-				}
-			}
-		}
-		//---------------------------------------------------
 	});

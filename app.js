@@ -25,8 +25,8 @@ angular.module('skateApp', ['ui.router', 'firebase'])
 						return parks.$loaded()
 							.then(function (data) {
 								var justStateParks = [];
-								for (var i = 0; i < data.length; i++){
-									if (data[i].state === $stateParams.state){
+								for (var i = 0; i < data.length; i++) {
+									if (data[i].state === $stateParams.state) {
 										justStateParks.push(data[i]);
 									}
 								}
@@ -40,15 +40,22 @@ angular.module('skateApp', ['ui.router', 'firebase'])
 				templateUrl: 'templates/parksTmpl.html',
 				controller: 'parkCtrl',
 				resolve: {
-					singlePark: function($firebaseArray){
+					singlePark: function ($firebaseArray, $stateParams) {
 						var fbRoot = 'https://skateapp.firebaseio.com';
-						var singleParkRef = new Firebase(fbRoot + '/messages');
+						var singleParkRef = new Firebase(fbRoot + '/parks');
 						var singleP = $firebaseArray(singleParkRef);
 						return singleP.$loaded()
-						.then(function(data){
-							console.log('this is data for messages', data);
-							return data;
-						})
+							.then(function (data) {
+								console.log('this is data', data);
+								console.log('this is stateParams', $stateParams);
+								for (var i = 0; i < data.length; i++) {
+									if (data[i].name === $stateParams.park) {
+										var parkobj = data[i];
+									}
+								}
+								console.log('what we are returning', parkobj);
+								return parkobj;
+							})
 					}
 				}
 			})
