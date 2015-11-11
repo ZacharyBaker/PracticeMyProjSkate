@@ -11,8 +11,9 @@ body, html {
 	background: url(images/a.jpg) no-repeat center center fixed; 
   
   background-size: cover;
-  height: 1000px;
-  
+  min-height: 730px;
+  position: relative;
+
 }
 
 .stateHeader {
@@ -159,15 +160,9 @@ max-width: 100px;
 
 }
 
-.dontSeeStateButton {
-  border: none;
-  border-radius: 5px;
-  font-family: 'Oswald', sans-serif;
 
-  
-}
 
-.hiddenButton {
+/*.hiddenButton {
     font-family: 'Oswald', sans-serif;
 
 }
@@ -175,7 +170,7 @@ max-width: 100px;
 .submitBreh {
   font-family: 'Oswald', sans-serif;
   
-}
+}*/
 
 .loginSelect {
 
@@ -183,6 +178,50 @@ max-width: 100px;
 
 }
 
+.buttonDirective, .submitBreh, .hiddenButton {
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.loginHeader {
+    font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 100px;  
+  /*border: 1px solid white;*/
+  position: absolute;
+  bottom: 70px;
+  right: 110px;
+  margin: 0px;
+}
+
+.goosfraba {
+  background: black;
+  position: relative;
+  height: 50px;
+}
+
+.dropdown {
+   margin-left: 20px;
+   margin-top: 10px;
+   -webkit-appearance: none;
+   width: 50px;
+   display: inline;
+   background: black;
+   color: white;
+   /*border: 1px solid white;*/
+}
+
+.dontSeeStateButton {
+  border: none;
+  border-radius: 5px;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  left: 100px;
+  bottom: 22px;
+  background: black;
+  color: white;
+  
+}
 /* pure sauce 
 
 font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif, "Microsoft Yahei";
