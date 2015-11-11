@@ -1,5 +1,10 @@
 <div class="stateBackground">
-<div>{{stateName.name}}</div>
+	<div class="stateHeader">
+		<h1>{{stateName.name}}</h1>
+	</div>
+	
+	
+
 	<div class="stateTmpl" ng-repeat="park in stateParks">
 
 
@@ -8,7 +13,7 @@
 				<a href="#/parks/{{thisState}}/{{park.$id}}">{{park.name}}</a>
 				<br>
 			</div>
-			<img ng-src="{{park.pic}}">
+			<img ng-src="{{park.imgUrl}}">
 			<br>
 			<div>
 				 address: {{park.address}}</div>
@@ -17,10 +22,14 @@
 	</div>
 	<div>
 		<add-park-dir></add-park-dir>
+		<footer-dir></footer-dir>
 	</div>
-	<footer-dir></footer-dir>
+	
+	
 
 </div>
+
+
 
 
 <!--------------------------------------------------------------------- -->

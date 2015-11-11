@@ -24,9 +24,12 @@ angular.module('skateApp')
 			$scope.addState = function(state) {
 				// console.log("adding a state");
 				$scope.states.$add(state);
+				$scope.stateName.name = "";
 
 			}
 
-
+			$scope.hider = function(){
+				$scope.hider = !$scope.hider;
+			}
 
 		}])
