@@ -14,12 +14,12 @@ angular.module('skateApp')
 			$scope.states = $firebaseArray(statesRef);
 			console.log($scope.states);
 			//changing the state
-			// $scope.changeState = function (stat) {
-			// 	$state.go('state', {
-			// 		state: stat
-			// 	});
-			// 	// console.log(stat);
-			// }
+			$scope.changeState = function (stat) {
+				$state.go('state', {
+					stateID: stat
+				});
+				// console.log(stat);
+			}
 
 			$scope.addState = function(state) {
 				// console.log("adding a state");
