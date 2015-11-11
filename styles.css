@@ -122,9 +122,12 @@ footer {
   background: white;
   width: 40%;
   border-radius: 20px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding-bottom: 20px;
   border: 1px solid #707070;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  
 
 }
 
