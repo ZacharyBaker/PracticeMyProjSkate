@@ -17,9 +17,9 @@
 		<button ng-click="hider()"class="dontSeeStateButton">Don't see your state?</button>
 	</div>
 
-	<form ng-hide="hider" ng-submit="addState(stateName)">
+	<form class="hiddenButton" ng-hide="hider" ng-submit="addState(stateName)">
 		<input class="loginInput" type="text" placeholder="add a state" ng-model="stateName.name">
-		<button>Add</button>
+		<button class="hiddenButton">Add</button>
 	</form>
 
 	<!--<div ng-repeat="state in states" style="color: #fff"> <a href="/#/parks/{{state.$id}}">{{state.name}}</a></div>-->

@@ -22,14 +22,14 @@ body, html {
   font-size: 18px;
   line-height: 32px;
   text-transform: uppercase;
-  
+
 }
 
 .stateBackground {
 	background: url(images/c.jpg) no-repeat center center fixed; 
   
   background-size: cover;
- min-height: 2000px; 
+ min-height: 1500px; 
   text-align: center;
   position: relative;
 
@@ -73,10 +73,12 @@ body, html {
 
 .parksContainer {
   background: url(images/b.jpg) no-repeat center center fixed; 
-  height: 1000px;
+  min-height: 1000px;
   background-size: cover;
   text-align: center;
   position: relative;
+  font-family: 'Oswald', sans-serif;
+  
 }
 
 .parkBox {
@@ -99,6 +101,8 @@ body, html {
   border-radius: 16px;
   box-shadow: inset 1px 1px 2px 0 #707070;
   transition: box-shadow 0.3s;
+
+  
 }
 .style-5 input[type="text"]:focus,
 .style-5 input[type="text"].focus {
@@ -109,12 +113,18 @@ body, html {
 footer {
     position: absolute;
     left: 0;
-    bottom: 0;
+    /*bottom: 0;*/
+    top: 98%;
     height: 100px;
     width: 100%;
-    color: blue;
-    background-color: red;
+    color: white;
+    background-color: #bdc3c7;
     padding-top: 20px;
+   font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+  line-height: 32px;
+  text-transform: uppercase;
+  border: 1px solid white;
 }
 
 
@@ -135,12 +145,13 @@ select {
 
 font-size: 20px;
  border: 0;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-family: 'Oswald', sans-serif;
+
 
 }
 
 .loginInput {
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-family: 'Oswald', sans-serif;
 font-size: 15px;
 border-radius: 5px;
 max-width: 100px;  
@@ -151,8 +162,25 @@ max-width: 100px;
 .dontSeeStateButton {
   border: none;
   border-radius: 5px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Oswald', sans-serif;
+
   
+}
+
+.hiddenButton {
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.submitBreh {
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+.loginSelect {
+
+  border: 2px solid #bdc3c7;
+
 }
 
 /* pure sauce 

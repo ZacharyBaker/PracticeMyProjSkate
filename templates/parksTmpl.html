@@ -10,9 +10,9 @@
 
 		<div class="inputBoxes">
 			<form ng-submit="sendMessageToFirebase(newMessage)">
-				<input type="text" placeholder="comment..." ng-model="newMessage.message">
-				<input type="text" placeholder="Username..." ng-model="newMessage.user">
-				<button>SubmitBrehh</button>
+				<input class="submitBreh" type="text" placeholder="comment..." ng-model="newMessage.message">
+				<input class="submitBreh" type="text" placeholder="Username..." ng-model="newMessage.user">
+				<button class="submitBreh">SubmitBrehh</button>
 
 			</form>
 		</div>
@@ -20,11 +20,20 @@
 
 
 		<p ng-repeat="parkMessage in parkMessages">{{parkMessage.message}}
-			<br> {{parkMessage.user}}
+			<br> --{{parkMessage.user}}--
 
 		</p>
 
+
 	</div>
+	<pre>
+		
+		
+		
+		
+		
+	
+	</pre>
 		<footer-dir></footer-dir>
 
 </div>
