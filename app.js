@@ -46,14 +46,11 @@ angular.module('skateApp', ['ui.router', 'firebase'])
 						var singleP = $firebaseArray(singleParkRef);
 						return singleP.$loaded()
 							.then(function (data) {
-								console.log('this is data', data);
-								console.log('this is stateParams', $stateParams);
 								for (var i = 0; i < data.length; i++) {
 									if (data[i].name === $stateParams.park) {
 										var parkobj = data[i];
 									}
 								}
-								console.log('what we are returning', parkobj);
 								return parkobj;
 							})
 					}

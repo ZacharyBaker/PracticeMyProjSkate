@@ -22,7 +22,7 @@ angular.module('skateApp')
 			newMessage.text = $scope.message;
 			newMessage.user = $scope.user;
 			mainService.addMessage(newMessage);
-			
+			console.log('this si the new message we want to add', newMessage);
 			
 			$scope.message = '';
 			$scope.user = '';

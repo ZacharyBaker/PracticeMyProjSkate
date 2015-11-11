@@ -17,7 +17,8 @@ angular.module('skateApp')
 				newPark.pic = $scope.newParkImgUrl;
 				// mainService.addNewPark($scope.newParkName, $scope.newParkAddress, $scope.newParkState, $scope.newParkImgUrl);
 				mainService.addPark(newPark);
-
+				$scope.stateParks = stateParks;
+				
 				$scope.newParkName = '';
 				$scope.newParkAddress = '';
 				$scope.newParkState = '';

@@ -1,10 +1,11 @@
 angular.module('skateApp')
 
-	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', '$state', function ($scope, mainService, $stateParams, $state) {
+	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', '$state',
+	 function ($scope, mainService, $stateParams, $state) {
 
 		$scope.states = mainService.getStates();
 		// console.log(mainService.getStates())
-		$scope.skateparks = mainService.getData();
+		// $scope.skateparks = mainService.getData();
 
 
 

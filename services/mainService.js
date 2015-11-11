@@ -9,11 +9,11 @@ angular.module('skateApp')
 			parks.$add(park);
 		}
 
-		this.addMessage = function (message){
+		this.addMessage = function (message) {
 			var fbRoot = 'https://skateapp.firebaseio.com';
-			var singleParkRef = new Firebase(fbRoot + '/messages');
-			var singleP = $firebaseArray(singleParkRef);
-			singleP.$add(message);
+			var messagesRef = new Firebase(fbRoot + '/messages');
+			var messag = $firebaseArray(messagesRef);
+			messag.$add(message);
 		}
 		
 		//-------------- get park data for solo page ----------
@@ -83,18 +83,18 @@ angular.module('skateApp')
 		
 		//------------ Add a new Park to the skateparks array -----------------
 
-		this.addNewPark = function (namE, addy, stat, imgUrl) {
-			var lowercaseState = stat.toLowerCase();
+		// this.addNewPark = function (namE, addy, stat, imgUrl) {
+		// 	var lowercaseState = stat.toLowerCase();
 			
-			for (var i = 0; i < skateparks.length; i++) {
-				if (skateparks[i].name === namE) {
-					return;
-				}
-			}
-			skateparks.push({
-				name: namE, state: lowercaseState, address: addy, pic: imgUrl
-			});
-		}
+		// 	for (var i = 0; i < skateparks.length; i++) {
+		// 		if (skateparks[i].name === namE) {
+		// 			return;
+		// 		}
+		// 	}
+		// 	skateparks.push({
+		// 		name: namE, state: lowercaseState, address: addy, pic: imgUrl
+		// 	});
+		// }
 
 		
 
@@ -122,14 +122,36 @@ angular.module('skateApp')
 	
 		//------------gets a list of states----------------
 		this.getStates = function () {
-			var stateArr = [];
-			for (var i = 0; i < skateparks.length; i++) {
-				if (stateArr.indexOf(skateparks[i].state) === -1) {
-					stateArr.push(skateparks[i].state);
-					// console.log('stateArr', stateArr)
-				}
-			}
-			return stateArr;
+			// var stateArr = [];
+			// for (var i = 0; i < skateparks.length; i++) {
+			// 	if (stateArr.indexOf(skateparks[i].state) === -1) {
+			// 		stateArr.push(skateparks[i].state);
+			// 		// console.log('stateArr', stateArr)
+			// 	}
+			// }
+			// return stateArr;
+			
+			var fbRoot = 'https://skateapp.firebaseio.com';
+			var parksRef = new Firebase(fbRoot + '/parks');
+			var parks = $firebaseArray(parksRef);
+			return parks.$loaded()
+				.then(function (data) {
+					var stateArr = [];
+					for (var i = 0; i < data.length; i++) {
+						if (stateArr.indexOf(data[i].state) === -1) {
+							stateArr.push(data[i].state);
+						}
+					}
+					console.log('this is stateArr', stateArr);
+					return stateArr;
+				})
+
+
+
+
+
+
+
 		}
 		//--------- gets parks specific to state--------------
 
@@ -146,6 +168,6 @@ angular.module('skateApp')
 			return this.stateParks;
 
 		}
-		
-		
+
+
 	});
