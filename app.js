@@ -1,60 +1,74 @@
 angular.module('skateApp', ['ui.router', 'firebase'])
 
-	.constant('fb', {
-		url: 'https://skateapp.firebaseio.com/'
-	})
+// angular.module('skateApp')
+// 	.constant('fb', {
+// 		url: 'https://skateapp.firebaseio.com/'
+// 	})
 
-	.config(function ($urlRouterProvider, $stateProvider) {
+	.config(function ($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
 			.state('login', {
 				url: '/login',
 				templateUrl: 'templates/loginTmpl.html',
-				controller: 'loginCtrl'
+				controller: 'loginCtrl',
+				resolve: {
+					statesRef: function (mainService) {
+						return mainService.getStates();
+					}
+				}
 			})
 
 			.state('state', {
-				url: '/state/:state',
+				url: '/parks/:stateID',
 				templateUrl: 'templates/stateTmpl.html',
 				controller: 'mainCtrl',
 				resolve: {
-					stateParks: function ($firebaseArray, $stateParams) {
-						var fbRoot = 'https://skateapp.firebaseio.com';
-						var parksRef = new Firebase(fbRoot + '/parks');
-						var parks = $firebaseArray(parksRef);
-						return parks.$loaded()
-							.then(function (data) {
-								var justStateParks = [];
-								for (var i = 0; i < data.length; i++) {
-									if (data[i].state === $stateParams.state) {
-										justStateParks.push(data[i]);
-									}
-								}
-								return justStateParks;
-							})
+					stateRef: function (mainService, $stateParams) {
+						return mainService.getThisStatesParks($stateParams.stateID);
 					}
 				}
 			})
+
 			.state('park', {
-				url: '/state/:state/:park',
+				url: '/parks/:stateID/:parkID',
 				templateUrl: 'templates/parksTmpl.html',
 				controller: 'parkCtrl',
 				resolve: {
-					singlePark: function ($firebaseArray, $stateParams) {
-						var fbRoot = 'https://skateapp.firebaseio.com';
-						var singleParkRef = new Firebase(fbRoot + '/parks');
-						var singleP = $firebaseArray(singleParkRef);
-						return singleP.$loaded()
-							.then(function (data) {
-								for (var i = 0; i < data.length; i++) {
-									if (data[i].name === $stateParams.park) {
-										var parkobj = data[i];
-									}
-								}
-								return parkobj;
-							})
+					parkRef: function (mainService, $stateParams) {
+						return mainService.getPark($stateParams.stateID, $stateParams.parkID);
+					},
+					messageRef: function(mainService, $stateParams){
+						return mainService.getMessages($stateParams.parkID);
 					}
+					
+					
+				
+					
+					
+					
+					
+					// stateRef: function (mainService, $stateParams) {
+					// 	return mainService.getThisStatesParks($stateParams.stateID);
+					// }
 				}
+				
+				// resolve: {
+				// 	singlePark: function ($firebaseArray, $stateParams) {
+				// 		var fbRoot = 'https://skateapp.firebaseio.com';
+				// 		var singleParkRef = new Firebase(fbRoot + '/parks');
+				// 		var singleP = $firebaseArray(singleParkRef);
+				// 		return singleP.$loaded()
+				// 			.then(function (data) {
+				// 				for (var i = 0; i < data.length; i++) {
+				// 					if (data[i].name === $stateParams.park) {
+				// 						var parkobj = data[i];
+				// 					}
+				// 				}
+				// 				return parkobj;
+				// 			})
+				// 	}
+				// }
 			})
 
 

@@ -9,9 +9,9 @@
 		<div><img ng-src="{{singlePark.pic}}"></div>
 
 		<div class="inputBoxes">
-			<form ng-submit="sendMessageToBackend()">
-				<input type="text" placeholder="comment..." ng-model="message">
-				<input type="text" placeholder="Username..." ng-model="user">
+			<form ng-submit="sendMessageToFirebase(newMessage)">
+				<input type="text" placeholder="comment..." ng-model="newMessage.message">
+				<input type="text" placeholder="Username..." ng-model="newMessage.user">
 				<button>SubmitBrehh</button>
 
 			</form>
@@ -19,7 +19,7 @@
 
 
 
-		<p ng-repeat="parkMessage in parkMessages">{{parkMessage.text}}
+		<p ng-repeat="parkMessage in parkMessages">{{parkMessage.message}}
 			<br> {{parkMessage.user}}
 
 		</p>

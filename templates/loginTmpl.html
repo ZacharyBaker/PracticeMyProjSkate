@@ -4,21 +4,22 @@
 
 
 	<!-- try ng submit with form-->
-	<form ng-submit="changeState(state)">
+	<!--<form ng-submit="changeState(state)">
 		<select ng-change="changeState(state)"name="state" ng-model="state">
 			<option value="">State</option>
 			<option ng-value="state" ng-repeat="stat in states">{{stat}}</option>
-
-
-
 		</select>
 
-	</form>
-
-
-
-
-
-
+	</form>-->
+<form ng-submit="addState(stateName)">
+<input type="text" placeholder="state..." ng-model="stateName.name">
+<button>Add</button>
+</form>
+<pre>
+	
+	
+	
+</pre>
+<div ng-repeat="state in states" style="color: #fff"> <a href="/#/parks/{{state.$id}}">{{state.name}}</a></div>
 
 </div>

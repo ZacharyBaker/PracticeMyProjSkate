@@ -1,20 +1,67 @@
 angular.module('skateApp')
 
-	.service('mainService', function ($firebaseArray) {
+	.service('mainService', function () {
+		
+		var appUrl = 'https://skateapp.firebaseio.com';
 
-		this.addPark = function (park) {
-			var fbRoot = 'https://skateapp.firebaseio.com';
-			var parksRef = new Firebase(fbRoot + '/parks');
-			var parks = $firebaseArray(parksRef);
-			parks.$add(park);
+		// this.addPark = function (park) {
+		// 	var fbRoot = 'https://skateapp.firebaseio.com';
+		// 	var parksRef = new Firebase(fbRoot + '/parks');
+		// 	var parks = $firebaseArray(parksRef);
+		// 	parks.$add(park);
+		// }
+
+		// this.addMessage = function (message) {
+		// 	var fbRoot = 'https://skateapp.firebaseio.com';
+		// 	var messagesRef = new Firebase(fbRoot + '/messages');
+		// 	var messag = $firebaseArray(messagesRef);
+		// 	messag.$add(message);
+		// }
+		
+		this.getStatesName = function (stateId) {
+
+			return new Firebase(appUrl + '/states/' + stateId);
+
+		};
+		
+		
+		//THIS IS FROM MY RESOLVE
+		
+		
+		this.getStates = function () {
+			return new Firebase(appUrl + '/states/');
+
+		};
+		
+		this.getThisStatesParks = function (state) {
+			return new Firebase(appUrl + '/parks/' + state);
+
+		};
+
+		this.getPark = function (state, park) {
+			return new Firebase(appUrl + '/parks/' + state + '/' + park);
+
+		};
+		
+		this.getMessages = function(parkId){
+			return new Firebase(appUrl + '/messages/' + parkId);
 		}
 
-		this.addMessage = function (message) {
-			var fbRoot = 'https://skateapp.firebaseio.com';
-			var messagesRef = new Firebase(fbRoot + '/messages');
-			var messag = $firebaseArray(messagesRef);
-			messag.$add(message);
-		}
+		
+		// var fbRoot = 'https://skateapp.firebaseio.com';
+		// 				var parksRef = new Firebase(fbRoot + '/parks');
+		// 				var parks = $firebaseArray(parksRef);
+		// 				return parks.$loaded()
+		// 					.then(function (data) {
+		// 						var justStateParks = [];
+		// 						for (var i = 0; i < data.length; i++) {
+		// 							if (data[i].state === $stateParams.state) {
+		// 								justStateParks.push(data[i]);
+		// 							}
+		// 						}
+		// 						return justStateParks;
+		// 					})
+		// 			}
 		
 		//-------------- get park data for solo page ----------
 		
@@ -73,13 +120,13 @@ angular.module('skateApp')
 
 
 
-		this.getData = function () {
-			return skateparks;
-		}
+		// this.getData = function () {
+		// 	return skateparks;
+		// }
 
 
-		var messages = [];
-		var parkMessages = [];
+		// var messages = [];
+		// var parkMessages = [];
 		
 		//------------ Add a new Park to the skateparks array -----------------
 
@@ -101,50 +148,50 @@ angular.module('skateApp')
 		
 		//-------- get the messages for certain park ------------
 
-		this.getMessages = function (parkNam) {
-			parkMessages = [];
-			for (var i = 0; i < messages.length; i++) {
-				if (messages[i].parkName === parkNam) {
-					parkMessages.push(messages[i]);
-				}
-			}
-			console.log('thisis the park parkMessages', parkMessages);
-			return parkMessages;
-		}	
+		// this.getMessages = function (parkNam) {
+		// 	parkMessages = [];
+		// 	for (var i = 0; i < messages.length; i++) {
+		// 		if (messages[i].parkName === parkNam) {
+		// 			parkMessages.push(messages[i]);
+		// 		}
+		// 	}
+		// 	console.log('thisis the park parkMessages', parkMessages);
+		// 	return parkMessages;
+		// }	
 		
-		//-----------add message to array of messages------
+		// //-----------add message to array of messages------
 		
-		this.addMessage = function (msg, name, user) {
-			messages.push({ text: msg, parkName: name, user: user })
-			console.log('this is the messages array', messages);
-		}
+		// this.addMessage = function (msg, name, user) {
+		// 	messages.push({ text: msg, parkName: name, user: user })
+		// 	console.log('this is the messages array', messages);
+		// }
 
 	
 		//------------gets a list of states----------------
-		this.getStates = function () {
-			// var stateArr = [];
-			// for (var i = 0; i < skateparks.length; i++) {
-			// 	if (stateArr.indexOf(skateparks[i].state) === -1) {
-			// 		stateArr.push(skateparks[i].state);
-			// 		// console.log('stateArr', stateArr)
-			// 	}
-			// }
-			// return stateArr;
+		// this.getStates = function () {
+		// 	// var stateArr = [];
+		// 	// for (var i = 0; i < skateparks.length; i++) {
+		// 	// 	if (stateArr.indexOf(skateparks[i].state) === -1) {
+		// 	// 		stateArr.push(skateparks[i].state);
+		// 	// 		// console.log('stateArr', stateArr)
+		// 	// 	}
+		// 	// }
+		// 	// return stateArr;
 			
-			var fbRoot = 'https://skateapp.firebaseio.com';
-			var parksRef = new Firebase(fbRoot + '/parks');
-			var parks = $firebaseArray(parksRef);
-			return parks.$loaded()
-				.then(function (data) {
-					var stateArr = [];
-					for (var i = 0; i < data.length; i++) {
-						if (stateArr.indexOf(data[i].state) === -1) {
-							stateArr.push(data[i].state);
-						}
-					}
-					console.log('this is stateArr', stateArr);
-					return stateArr;
-				})
+		// 	var fbRoot = 'https://skateapp.firebaseio.com';
+		// 	var parksRef = new Firebase(fbRoot + '/parks');
+		// 	var parks = $firebaseArray(parksRef);
+		// 	return parks.$loaded()
+		// 		.then(function (data) {
+		// 			var stateArr = [];
+		// 			for (var i = 0; i < data.length; i++) {
+		// 				if (stateArr.indexOf(data[i].state) === -1) {
+		// 					stateArr.push(data[i].state);
+		// 				}
+		// 			}
+		// 			console.log('this is stateArr', stateArr);
+		// 			return stateArr;
+		// 		})
 
 
 
@@ -152,22 +199,22 @@ angular.module('skateApp')
 
 
 
-		}
+		// }
 		//--------- gets parks specific to state--------------
 
-		this.getParks = function (stat) {
-			this.stateParks = [];
-			for (var i = 0; i < skateparks.length; i++) {
-				if (skateparks[i].state === stat) {
-					this.stateParks.push(skateparks[i]);
-				}
-			}
+		// this.getParks = function (stat) {
+		// 	this.stateParks = [];
+		// 	for (var i = 0; i < skateparks.length; i++) {
+		// 		if (skateparks[i].state === stat) {
+		// 			this.stateParks.push(skateparks[i]);
+		// 		}
+		// 	}
 
 
 
-			return this.stateParks;
+		// 	return this.stateParks;
 
-		}
+		// }
 
 
 	});

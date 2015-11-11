@@ -1,26 +1,32 @@
 angular.module('skateApp')
 
-	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', '$state',
-	 function ($scope, mainService, $stateParams, $state) {
+	.controller('loginCtrl', ['$scope', 'mainService', '$stateParams', '$state', 'statesRef', '$firebaseArray',
+		function ($scope, mainService, $stateParams, $state, statesRef, $firebaseArray) {
 
-		$scope.states = mainService.getStates();
-		// console.log(mainService.getStates())
-		// $scope.skateparks = mainService.getData();
+			// $scope.states = mainService.getStates();
+			// // console.log(mainService.getStates())
+			// // $scope.skateparks = mainService.getData();
+			// console.log('this is scope.states', $scope.states);
+
+
+			// $scope.state = $stateParams.state;
+
+			$scope.states = $firebaseArray(statesRef);
+			console.log($scope.states);
+			//changing the state
+			// $scope.changeState = function (stat) {
+			// 	$state.go('state', {
+			// 		state: stat
+			// 	});
+			// 	// console.log(stat);
+			// }
+
+			$scope.addState = function(state) {
+				// console.log("adding a state");
+				$scope.states.$add(state);
+
+			}
 
 
 
-		$scope.state = $stateParams.state;
-
-		//changing the state
-		$scope.changeState = function (stat){
-			$state.go('state', {
-				state: stat
-			});
-			// console.log(stat);
-		}
-	
-	
-		
-		
-
-	}])
+		}])
