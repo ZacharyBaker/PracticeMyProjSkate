@@ -27,8 +27,7 @@ body, html {
 }
 
 .stateBackground {
-	background: url(images/c.jpg) no-repeat center center fixed; 
-  
+	background: url(images/skateBoard2a.jpg) no-repeat center center fixed; 
   background-size: cover;
  min-height: 1500px; 
   text-align: center;
@@ -119,7 +118,8 @@ footer {
     height: 100px;
     width: 100%;
     color: white;
-    background-color: #bdc3c7;
+    background-color: #6C7A89;
+;
     padding-top: 20px;
    font-family: 'Oswald', sans-serif;
     font-size: 18px;
