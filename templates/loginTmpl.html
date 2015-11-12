@@ -5,25 +5,30 @@
 
 		<!-- try ng submit with form-->
 		<form ng-submit="changeState(state)">
+				<div><img class="loginImg" src="images/Drawing.png" height="40"></div>
+			
 			<select class="dropdown" class="loginSelect" ng-change="changeState(state)" name="state" ng-model="state">
-				<option  value="">STATE</option>
+				
+				<option value="">STATE</option>
 				<option ng-value="state.$id" ng-repeat="state in states">{{state.name}}</option>
 			</select>
 
 		</form>
-	<!--<select  ng-options="state.$id for state in states"></select>-->
+		<!--<select  ng-options="state.$id for state in states"></select>-->
 
-	<div>
-		<button ng-click="hider()" class="dontSeeStateButton">Don't see your state?</button>
-	</div>
+		<div>
+			<button ng-click="hider()" class="dontSeeStateButton">Don't see your state?</button>
+		</div>
 
-	<form class="hiddenButton" ng-hide="hider" ng-submit="addState(stateName)">
-		<input class="loginInput" type="text" placeholder="add a state" ng-model="stateName.name">
-		<button class="hiddenButton">Add</button>
-	</form>
+		<form class="hiddenButton" ng-hide="hider" ng-submit="addState(stateName)">
+			<input class="loginInput" type="text" placeholder="add a state" ng-model="stateName.name">
+			<button class="hiddenButton">Add</button>
+			
+		</form>
+		
 	</div>
 
 	<!--<div ng-repeat="state in states" style="color: #fff"> <a href="/#/parks/{{state.$id}}">{{state.name}}</a></div>-->
 
-	<h1 class="loginHeader">skterpark</h1>
+	<h1 class="loginHeader">sk8islife</h1>
 </div>

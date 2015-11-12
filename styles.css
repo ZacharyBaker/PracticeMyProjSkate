@@ -222,6 +222,12 @@ max-width: 100px;
   color: white;
   
 }
+.loginImg {
+  float: right;
+  position: relative;
+  top: 6px;
+  right: 10px;
+}
 /* pure sauce 
 
 font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif, "Microsoft Yahei";
