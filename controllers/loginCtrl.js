@@ -27,8 +27,8 @@ angular.module('skateApp')
 				$scope.stateName.name = "";
 
 			}
-			// $scope.hider = true;
-			$scope.hider = function(){
+			$scope.hider = true;
+			$scope.hiderd = function(){
 				$scope.hider = !$scope.hider;
 			}
 
